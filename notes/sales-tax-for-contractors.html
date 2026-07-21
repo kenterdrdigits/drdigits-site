@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Record Sales Tax for Contractors in QuickBooks (Housecall Pro Walkthrough) — Dr. Digits</title>
+<meta name="description" content="Sales tax you collect is a liability, not income or an expense. A real deposit-splitting walkthrough for contractors using Housecall Pro and QuickBooks.">
+<link rel="canonical" href="https://drdigits.com/notes/sales-tax-for-contractors.html">
+<meta property="og:title" content="How to Record Sales Tax for Contractors in QuickBooks (Housecall Pro Walkthrough) — Dr. Digits">
+<meta property="og:url" content="https://drdigits.com/notes/sales-tax-for-contractors.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "How to record sales tax for contractors in QuickBooks (Housecall Pro walkthrough)", "description": "Sales tax you collect is a liability, not income or an expense. A real deposit-splitting walkthrough for contractors using Housecall Pro and QuickBooks.", "author": {"@type": "Person", "name": "Kyle Kent", "url": "https://drdigits.com/about.html"}, "publisher": {"@type": "Organization", "name": "Dr. Digits", "url": "https://drdigits.com"}, "mainEntityOfPage": "https://drdigits.com/notes/sales-tax-for-contractors.html"}, {"@type": "VideoObject", "name": "How to Calculate Sales Tax for Contractors | Step-by-Step Tutorial (Housecall Pro + QuickBooks)", "description": "Step-by-step: splitting contractor deposits into income and sales-tax liability in QuickBooks.", "embedUrl": "https://www.youtube.com/embed/0eCb1_XKttw", "uploadDate": "2025-11-01", "thumbnailUrl": "https://i.ytimg.com/vi/0eCb1_XKttw/hqdefault.jpg", "publisher": {"@type": "Organization", "name": "Dr. Digits"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is sales tax I collect an expense?", "acceptedAnswer": {"@type": "Answer", "text": "No. It was never your money. You're collecting it from the customer on the state's behalf and holding it until you remit. Booking it as an expense (or leaving it in income) misstates both your profit and what you owe."}}, {"@type": "Question", "name": "I'm on cash basis. Does this still apply?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cash basis changes when you recognize income, not whose money the tax is. Even on cash basis, the tax portion of a deposit belongs on your balance sheet as a liability, not on your P&L."}}, {"@type": "Question", "name": "What if a job is paid in progress payments, like thirds?", "acceptedAnswer": {"@type": "Answer", "text": "Split every deposit as it lands. In the example above, the invoice was paid one-third at a time, and each deposit got the same treatment: sales portion to income, tax portion to the liability. Attach the invoice to each split and note how you broke the tax out, so you (or an auditor) can see whether tax was recognized per-payment or on the final payment."}}, {"@type": "Question", "name": "How do I know what I owe the state each month?", "acceptedAnswer": {"@type": "Answer", "text": "Look at the sales tax liability account on your balance sheet. If every deposit has been split correctly, the balance at month-end is exactly what you owe. In the walkthrough, the client's September balance was $2,230 \u2014 that was the filing, done. If that balance only ever grows, it means you're collecting but not remitting."}}, {"@type": "Question", "name": "Does Housecall Pro send this to QuickBooks automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Housecall Pro pushes the invoice and payment across, but the deposit still lands in your QuickBooks bank feed as one lump sum. The split into income vs. sales-tax liability is the bookkeeping step you (or your bookkeeper) do in QuickBooks \u2014 that's the part this article covers."}}]}]}</script>
+<style>
+  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#f2f1ec;font-family:"IBM Plex Sans",-apple-system,sans-serif;color:#0a0a0a;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4a4a4a;text-decoration:none}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(242,241,236,.86);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #e4e2dc}
+  .navin{max-width:1120px;margin:0 auto;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .navlinks{display:flex;align-items:center;gap:30px}
+  .btn{display:inline-flex;align-items:center;background:#0a0a0a;color:#fff;font-size:13px;font-weight:600;padding:11px 18px;text-decoration:none;border-radius:2px;transition:.15s}
+  .btn:hover{background:#2a2a2a}
+  .wrap{max-width:720px;margin:0 auto;padding:72px 24px 40px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.26em;color:#8a877f;text-transform:uppercase;margin-bottom:26px}
+  h1{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:46px;line-height:1.08;letter-spacing:-.025em;margin:0 0 18px}
+  .hl{background-image:linear-gradient(transparent 56%,#7EF98F 56%);padding:0 .04em}
+  .dek{font-family:Newsreader,serif;font-style:italic;font-size:21px;color:#4a4a4a;line-height:1.4;margin:0 0 34px}
+  .answer{background:#fff;border:1px solid #e4e2dc;border-left:3px solid #7EF98F;padding:22px 26px;margin:0 0 40px;font-size:17px;line-height:1.6}
+  .answer .lbl{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a877f;display:block;margin-bottom:10px}
+  article p{font-size:17px;line-height:1.7;color:#2a2a2a;margin:0 0 22px}
+  article h2{font-family:Newsreader,serif;font-weight:500;font-size:29px;line-height:1.15;letter-spacing:-.015em;margin:44px 0 16px}
+  article ul,article ol{font-size:17px;line-height:1.7;color:#2a2a2a;margin:0 0 22px;padding-left:24px}
+  article li{margin-bottom:8px}
+  .num{font-family:Newsreader,serif;font-weight:500}
+  .pull{font-family:Newsreader,serif;font-style:italic;font-size:22px;line-height:1.4;color:#1a1a1a;border-top:1px solid #0a0a0a;border-bottom:1px solid #e4e2dc;padding:22px 4px;margin:34px 0}
+  .faq{margin-top:52px;border-top:1px solid #0a0a0a;padding-top:12px}
+  .faq h2{margin-top:22px}
+  .faq h3{font-family:Newsreader,serif;font-weight:500;font-size:20px;margin:26px 0 8px}
+  .faq p{font-size:16px;color:#3a3a3a;margin:0 0 6px}
+  .cta{background:#0a0a0a;color:#f2f1ec;padding:40px 36px;margin:56px 0 0}
+  .cta .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7EF98F;margin-bottom:16px}
+  .cta h2{font-family:Newsreader,serif;font-weight:500;font-size:30px;line-height:1.12;margin:0 0 12px;letter-spacing:-.015em}
+  .cta p{font-size:16px;line-height:1.6;color:#c9c7bf;margin:0 0 24px}
+  .cta .row{display:flex;gap:14px;flex-wrap:wrap}
+  .ctabtn{display:inline-flex;align-items:center;background:#7EF98F;color:#0a0a0a;font-size:16px;font-weight:600;padding:15px 26px;text-decoration:none;border-radius:2px;transition:.15s}
+  .ctabtn:hover{filter:brightness(1.06)}
+  .ctabtn.dark{background:transparent;color:#f2f1ec;border:1.5px solid #7EF98F}
+  .fine{font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.6;color:#9a9791;margin:26px 0 0}
+  .videowrap{position:relative;padding-bottom:56.25%;height:0;margin:0 0 30px;background:#0a0a0a}
+  .videowrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  footer{background:#0a0a0a;color:#f2f1ec;margin-top:72px}
+  .footin{max-width:1120px;margin:0 auto;padding:44px 40px}
+  .footrow{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .footlinks{display:flex;gap:26px;flex-wrap:wrap}
+  .footlinks a{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#c9c7bf;text-decoration:none}
+  .copy{font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.7;color:#7d7a72;margin:20px 0 0;max-width:80ch}
+  @media (max-width:760px){ h1{font-size:34px} .navlinks a.mono{display:none} .wrap{padding-top:48px} }
+</style>
+</head>
+<body>
+<div class="nav"><div class="navin">
+  <a href="../" style="font-family:Newsreader,serif;font-weight:600;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:#0a0a0a">Dr. Digits</a>
+  <div class="navlinks">
+    <a class="mono" href="../#work">The work</a>
+    <a class="mono" href="../services.html">Services</a>
+    <a class="mono" href="../about.html">About</a>
+    <a class="mono" href="../for-cpa-firms.html">For CPA firms</a>
+    <a class="btn" href="../contact.html">Book a call &rarr;</a>
+  </div>
+</div></div>
+
+<div class="wrap"><article>
+<div class="eyebrow">Notes &middot; Contractors &amp; home services</div>
+<h1>How to record sales tax for contractors in QuickBooks <span class="hl">(the right way)</span></h1>
+<p class="dek">A real walkthrough from a Housecall Pro + QuickBooks engagement &mdash; one deposit, split correctly, and a balance sheet that tells you what you owe.</p>
+
+<div class="answer"><span class="lbl">The short answer</span>
+Sales tax you collect from customers is <strong>not income and not an expense</strong> &mdash; it's the state's money passing through your hands. Every deposit gets split: the sales portion goes to income, the tax portion goes to a <strong>sales tax liability</strong> account on your balance sheet. Do that consistently and your month-end liability balance <em>is</em> your filing number.</p>
+</div>
+
+<div class="videowrap"><iframe src="https://www.youtube.com/embed/0eCb1_XKttw" title="How to Calculate Sales Tax for Contractors — Housecall Pro + QuickBooks" allowfullscreen loading="lazy"></iframe></div>
+
+<h2>The mistake almost every home-service business makes</h2>
+<p>Plumbing, HVAC, electrical, landscaping, cleaning &mdash; if you invoice through Housecall Pro (or Jobber, or ServiceTitan), your customer pays one number, and that number lands in your bank feed as one lump deposit. The common move is to book the whole thing as income, and later book the check to the state as an expense.</p>
+<p>That's wrong, and it stays wrong even if you're on a cash basis. It overstates your revenue, buries what you owe, and turns every filing deadline into guesswork. The tax was never yours &mdash; it should never touch your P&amp;L.</p>
+
+<h2>The walkthrough: one deposit, split correctly</h2>
+<p>Here's a real example from a client's books (details from the video above). Invoice 414 went out through Housecall Pro and was paid on October 8, 2025 &mdash; a progress payment of one-third of the job total. The deposit hit the bank feed as <span class="num">$11,422</span>, one lump sum, sales tax included.</p>
+<p>In QuickBooks, instead of accepting it as-is, you <strong>split the deposit</strong>:</p>
+<ol>
+<li>Open the deposit in the bank feed and choose <strong>Split</strong>.</li>
+<li>Line one: the sales portion &mdash; in this job's case about 97% of the deposit &mdash; to the income account (here, commercial income).</li>
+<li>Line two: the tax portion &mdash; the remaining ~3%, about $305 on this deposit &mdash; to the <strong>sales tax liability</strong> account.</li>
+<li><strong>Attach the invoice</strong> to the transaction. When a job is paid in thirds, note whether you broke tax out on each payment or on the last one &mdash; future-you (and any auditor) will need to know which.</li>
+<li>Save, and repeat for every deposit, every month.</li>
+</ol>
+
+<h2>How to read the result on your balance sheet</h2>
+<p>Once deposits are split consistently, the sales tax liability account becomes the most honest line on your books. On this client's balance sheet, the liability grew steadily from January through August &mdash; which told me immediately that they were collecting tax but not remitting it. In September a payment finally went out, and the month ended with a clean, known balance: <span class="num">$2,230</span> owed.</p>
+<div class="pull">That's the whole payoff: at month-end, the liability balance <em>is</em> your sales tax filing. No guessing, no spreadsheet archaeology in April.</div>
+<p>And your income statement stays honest too &mdash; only the sales portion hits revenue. When you pay the state, the payment clears the liability, not your profit.</p>
+
+<div class="faq">
+<h2>Common questions</h2>
+<h3>Is sales tax I collect an expense?</h3>
+<p>No. It was never your money. You're collecting it from the customer on the state's behalf and holding it until you remit. Booking it as an expense (or leaving it in income) misstates both your profit and what you owe.</p>
+<h3>I'm on cash basis. Does this still apply?</h3>
+<p>Yes. Cash basis changes when you recognize income, not whose money the tax is. Even on cash basis, the tax portion of a deposit belongs on your balance sheet as a liability, not on your P&L.</p>
+<h3>What if a job is paid in progress payments, like thirds?</h3>
+<p>Split every deposit as it lands. In the example above, the invoice was paid one-third at a time, and each deposit got the same treatment: sales portion to income, tax portion to the liability. Attach the invoice to each split and note how you broke the tax out, so you (or an auditor) can see whether tax was recognized per-payment or on the final payment.</p>
+<h3>How do I know what I owe the state each month?</h3>
+<p>Look at the sales tax liability account on your balance sheet. If every deposit has been split correctly, the balance at month-end is exactly what you owe. In the walkthrough, the client's September balance was $2,230 — that was the filing, done. If that balance only ever grows, it means you're collecting but not remitting.</p>
+<h3>Does Housecall Pro send this to QuickBooks automatically?</h3>
+<p>Housecall Pro pushes the invoice and payment across, but the deposit still lands in your QuickBooks bank feed as one lump sum. The split into income vs. sales-tax liability is the bookkeeping step you (or your bookkeeper) do in QuickBooks — that's the part this article covers.</p>
+
+</div>
+
+<div class="cta">
+<div class="lbl">Want this off your plate?</div>
+<h2>I'll keep the books, split the deposits, and file the sales tax.</h2>
+<p>If you're behind on filings or your liability account is a mystery, that's a solvable problem. Dr. Digits does the bookkeeping, breaks out sales tax on every deposit, and keeps you compliant with your state &mdash; so you can go run the business.</p>
+<div class="row">
+<a class="ctabtn" href="https://calendly.com/kyle-doctordigits/new-meeting" target="_blank" rel="noopener">Book a free 30-min call &rarr;</a>
+<a class="ctabtn dark" href="../contact.html">Send a note instead &rarr;</a>
+</div>
+</div>
+
+<p class="fine">Client figures shown with permission, lightly rounded. Not tax advice &mdash; your state's rules control. Engagements subject to a written agreement.</p>
+</article></div>
+
+<footer><div class="footin">
+  <div class="footrow">
+    <a href="../" style="font-family:Newsreader,serif;font-size:22px;font-weight:600;text-decoration:none;color:#f2f1ec">Dr. Digits</a>
+    <div class="footlinks">
+      <a href="../">Home</a>
+      <a href="../services.html">Services</a>
+      <a href="../about.html">About</a>
+      <a href="../for-cpa-firms.html">For CPA firms</a>
+      <a href="https://www.youtube.com/@DoctorDigits" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+  <p class="copy">&copy; 2026 Dr. Digits. Nothing here is legal or tax advice &mdash; engagements are subject to a written agreement.</p>
+</div></footer>
+<script>
+(function(){
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyu_Qr8zyI25IgiMPWnnezy4kVlE1VzgEoW_kC57l3Ocbg6ncuFiU-Y_4XZ84IFW71g/exec";
+  var ret = false;
+  function vid(){ try{ var v=localStorage.getItem('drd_vid'); if(v){ ret=true; } else { v='v'+Math.random().toString(36).slice(2)+Date.now().toString(36); localStorage.setItem('drd_vid',v);} return v; }catch(e){ return 'v-nostorage'; } }
+  function utm(){ var p=new URLSearchParams(location.search); var o={}; ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if(p.get(k)) o[k]=p.get(k); }); if(!o.utm_campaign) o.utm_campaign='notes'; return o; }
+  var v = vid();
+  try{
+    var d = Object.assign({ type:'visit', visitorId: v, returning: ret, page: 'notes/sales-tax-for-contractors',
+      referrer: document.referrer||'', screen: screen.width+'x'+screen.height,
+      viewport: innerWidth+'x'+innerHeight, language: navigator.language||'',
+      timezone: (Intl.DateTimeFormat().resolvedOptions()||{}).timeZone||'', userAgent: navigator.userAgent }, utm());
+    var body = JSON.stringify(d);
+    if(navigator.sendBeacon){ navigator.sendBeacon(APPS_SCRIPT_URL, new Blob([body], {type:'text/plain'})); }
+    else{ fetch(APPS_SCRIPT_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body}); }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
