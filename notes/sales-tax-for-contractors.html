@@ -130,6 +130,44 @@ Sales tax you collect from customers is <strong>not income and not an expense</s
 <p class="fine">Client figures shown with permission, lightly rounded. Not tax advice &mdash; your state's rules control. Engagements subject to a written agreement.</p>
 </article></div>
 
+<!-- DRD NEWSLETTER BAND -->
+<style>
+  .drd-nl{background:#f2f1ec;border-top:1px solid #e4e2dc;color:#0a0a0a;font-family:'IBM Plex Sans',-apple-system,sans-serif}
+  .drd-nl-in{max-width:1120px;margin:0 auto;padding:72px 40px;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+  .drd-nl-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8a877f;margin-bottom:18px}
+  .drd-nl-h{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:40px;line-height:1.06;letter-spacing:-.025em;margin:0 0 14px}
+  .drd-nl-h span{background-image:linear-gradient(transparent 56%,#7EF98F 56%);padding:0 .04em}
+  .drd-nl-sub{font-size:16px;line-height:1.6;color:#4a4a4a;margin:0;max-width:44ch}
+  .drd-nl-card{background:#fff;border:1px solid #e4e2dc;padding:30px;box-shadow:rgba(0,0,0,.35) 0 24px 60px -46px}
+  .drd-nl-row{display:flex;gap:10px}
+  .drd-nl-row input{flex:1;min-width:0;border:1.5px solid #d9d7cf;border-radius:2px;background:transparent;font-family:'IBM Plex Sans',sans-serif;font-size:15px;padding:14px 16px;color:#0a0a0a;outline:none}
+  .drd-nl-row input:focus{border-color:#0a0a0a}
+  .drd-nl-row button{border:none;background:#7EF98F;color:#0a0a0a;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:600;padding:14px 22px;border-radius:2px;cursor:pointer;transition:.15s;white-space:nowrap}
+  .drd-nl-row button:hover{filter:brightness(.96)}
+  .drd-nl-fine{font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.6;letter-spacing:.02em;color:#a19e95;margin:14px 0 0}
+  @media(max-width:860px){.drd-nl-in{grid-template-columns:1fr;gap:28px;padding:52px 22px}.drd-nl-h{font-size:32px}.drd-nl-row{flex-direction:column}}
+</style>
+<div class="drd-nl">
+  <div class="drd-nl-in">
+    <div>
+      <div class="drd-nl-eyebrow">The email list</div>
+      <div class="drd-nl-h">Notes, straight to <span>your inbox.</span></div>
+      <p class="drd-nl-sub">Real numbers from real projects &mdash; the same notes published here, sent when they&rsquo;re written. One or two a month.</p>
+    </div>
+    <div class="drd-nl-card" id="drd-nl-card">
+      <form id="drd-nl-form">
+        <input type="text" name="company_fax" value="" style="position:absolute;left:-9999px;height:0;overflow:hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="drd-nl-row">
+          <input id="drd-nl-email" type="email" name="email" placeholder="you@company.com" autocomplete="email">
+          <button type="submit">Sign me up &rarr;</button>
+        </div>
+      </form>
+      <p class="drd-nl-fine">Free. No spam, unsubscribe anytime.</p>
+    </div>
+  </div>
+</div>
+<!-- /DRD NEWSLETTER BAND -->
+
 <footer><div class="footin">
   <div class="footrow">
     <a href="../" style="font-family:Newsreader,serif;font-size:22px;font-weight:600;text-decoration:none;color:#f2f1ec">Dr. Digits</a>
@@ -159,6 +197,31 @@ Sales tax you collect from customers is <strong>not income and not an expense</s
     if(navigator.sendBeacon){ navigator.sendBeacon(APPS_SCRIPT_URL, new Blob([body], {type:'text/plain'})); }
     else{ fetch(APPS_SCRIPT_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body}); }
   }catch(e){}
+})();
+</script>
+<script>
+(function(){
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyu_Qr8zyI25IgiMPWnnezy4kVlE1VzgEoW_kC57l3Ocbg6ncuFiU-Y_4XZ84IFW71g/exec";
+  var f = document.getElementById('drd-nl-form'); if(!f) return;
+  var t0 = Date.now();
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var em = document.getElementById('drd-nl-email');
+    var email = (em.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ em.style.borderColor='#d0453c'; em.focus(); return; }
+    var hp = (f.querySelector('input[name="company_fax"]')||{}).value||'';
+    if(hp || (Date.now()-t0) < 2000){ done(); return; }
+    var vid=''; try{ vid = localStorage.getItem('drd_vid')||''; }catch(e2){}
+    var p = new URLSearchParams(location.search); var o = {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if(p.get(k)) o[k]=p.get(k); });
+    var d = Object.assign({ type:'newsletter', email:email, page:location.pathname, visitorId:vid, referrer:document.referrer||'' }, o);
+    try{ fetch(APPS_SCRIPT_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: JSON.stringify(d)}); }catch(e3){}
+    done();
+  });
+  function done(){
+    document.getElementById('drd-nl-card').innerHTML = '<div style="font-family:Newsreader,serif;font-size:26px;font-weight:500;margin-bottom:8px">You\'re in. <span style="background-image:linear-gradient(transparent 56%, #7EF98F 56%)">Watch your inbox.</span></div>' +
+      '<p style="font-size:14.5px;line-height:1.6;color:#4a4a4a;margin:0">In the meantime, the latest notes are <a href="/notes/" style="color:#0a0a0a;font-weight:600">right here &rarr;</a></p>';
+  }
 })();
 </script>
 </body>
