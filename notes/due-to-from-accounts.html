@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notes — Dr. Digits</title>
-<meta name="description" content="Field notes from real small-business finance engagements: TICAM recovery, inventory, sales tax, and the work that falls between the chairs.">
-<link rel="canonical" href="https://drdigits.com/notes/">
-<meta property="og:title" content="Notes — Dr. Digits">
-<meta property="og:url" content="https://drdigits.com/notes/">
+<title>How to Track Money Between Your Companies: Due To/From Accounts, Explained — Dr. Digits</title>
+<meta name="description" content="Transfers between your own companies aren't income and aren't expenses — they belong in a due to/from account. A real example that distorted the numbers by $36,000, and the three-step fix.">
+<link rel="canonical" href="https://drdigits.com/notes/due-to-from-accounts.html">
+<meta property="og:title" content="How to Track Money Between Your Companies: Due To/From Accounts, Explained — Dr. Digits">
+<meta property="og:url" content="https://drdigits.com/notes/due-to-from-accounts.html">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Notes \u2014 Dr. Digits", "url": "https://drdigits.com/notes/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "How to track money between your companies: due to/from accounts, explained", "description": "Transfers between your own companies aren't income and aren't expenses — they belong in a due to/from account. A real example that distorted the numbers by $36,000, and the three-step fix.", "author": {"@type": "Person", "name": "Kyle Kent", "url": "https://drdigits.com/about.html"}, "publisher": {"@type": "Organization", "name": "Dr. Digits", "url": "https://drdigits.com"}, "mainEntityOfPage": "https://drdigits.com/notes/due-to-from-accounts.html"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a due to/from account an asset or a liability?", "acceptedAnswer": {"@type": "Answer", "text": "Both, depending on direction. \"Due from\" is a receivable — money another one of your companies owes this one — so it sits on the balance sheet as an asset. \"Due to\" is the mirror image, a payable, so it's a liability. Many owners use a single \"Due to/from\" account per related company that swings positive or negative."}}, {"@type": "Question", "name": "Do transfers between my companies count as income?", "acceptedAnswer": {"@type": "Answer", "text": "No. When money moves between companies you own, it isn't revenue to the receiver and it isn't an expense to the sender — booking it that way overstates income on one set of books and overstates expenses on the other. It belongs in the due to/from account. How the balances are treated for tax depends on your entity structure, so loop in your CPA before year-end."}}, {"@type": "Question", "name": "Do the balances have to match between the two companies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — that's the mirror rule. If Company A shows $10,000 due from Company B, then Company B's books should show $10,000 due to Company A. If the two sides don't agree, something was booked on one company and missed on the other, and that difference is exactly where the distortion hides."}}, {"@type": "Question", "name": "I own both companies — can't I just ignore it?", "acceptedAnswer": {"@type": "Answer", "text": "You can, but then neither P&L is telling you the truth: one company looks more profitable than it is and the other looks worse. That distorts every decision you make from the numbers — pricing, hiring, which company gets investment — and it surfaces fast in a lender review, a partner buy-in, or a sale. The fix costs a few journal entries a year."}}]}]}</script>
 <style>
   *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#f2f1ec;font-family:"IBM Plex Sans",-apple-system,sans-serif;color:#0a0a0a;-webkit-font-smoothing:antialiased}
   a{color:inherit}
@@ -48,8 +48,6 @@
   .ctabtn:hover{filter:brightness(1.06)}
   .ctabtn.dark{background:transparent;color:#f2f1ec;border:1.5px solid #7EF98F}
   .fine{font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.6;color:#9a9791;margin:26px 0 0}
-  .videowrap{position:relative;padding-bottom:56.25%;height:0;margin:0 0 30px;background:#0a0a0a}
-  .videowrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   footer{background:#0a0a0a;color:#f2f1ec;margin-top:72px}
   .footin{max-width:1120px;margin:0 auto;padding:44px 40px}
   .footrow{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
@@ -71,22 +69,57 @@
   </div>
 </div></div>
 
-<div class="wrap">
-<div class="eyebrow">Notes</div>
-<h1>Field notes from the <span class="hl">between-the-chairs</span> work.</h1>
-<p class="dek">Real engagements, real numbers, written up so you can use them.</p>
+<div class="wrap"><article>
+<div class="eyebrow">Notes &middot; Multi-business owners</div>
+<h1>How to track money <span class="hl">between your companies.</span></h1>
+<p class="dek">Due to/from accounts, explained with a real example.</p>
 
-<article>
-<h2 style="margin-top:10px"><a href="due-to-from-accounts.html" style="text-decoration:none;border-bottom:1.5px solid #0a0a0a">How to track money between your companies &rarr;</a></h2>
-<p>Transfers between your own companies aren't income or expenses &mdash; they belong in a due to/from account. The bucket, the mirror rule, and a real example that distorted the numbers by $36,000.</p>
+<div class="answer"><span class="lbl">The one-sentence version</span>
+When money moves between your companies, it's not income and it's not an expense &mdash; it belongs in a <strong>due to/from account</strong>: a bucket on each company's balance sheet that tracks what your companies owe each other.</div>
 
-<h2><a href="what-is-ticam.html" style="text-decoration:none;border-bottom:1.5px solid #0a0a0a">What is TICAM? Taxes, insurance + CAM, explained &rarr;</a></h2>
-<p>The three costs your commercial tenants owe you under an NNN lease &mdash; why small landlords never bill them, and the 120-day clause that cost one landlord $95,000.</p>
+<p>If you're an entrepreneur, chances are that over time you'll end up with more than one company. And it's completely normal to transfer money between them. Maybe one company pays the marketing for both. Maybe a partner reimburses one company while the expense sits on another's books.</p>
+<p>Here's the problem: the moment that happens, <em>income is overstated on one company, and expenses are overstated on the other.</em> Neither set of books is telling you the truth &mdash; and the owners who do well tend to be the ones with a real grasp of the details that make up their financials. Even John D. Rockefeller started out as a bookkeeper.</p>
 
-<h2><a href="sales-tax-for-contractors.html" style="text-decoration:none;border-bottom:1.5px solid #0a0a0a">How to record sales tax for contractors in QuickBooks &rarr;</a></h2>
-<p>Sales tax is a liability, not income or an expense. A deposit-splitting walkthrough from a real Housecall Pro + QuickBooks engagement.</p>
-</article>
+<h2>A live example (names changed)</h2>
+<p>Three characters. A painting company &mdash; call it Paint Pro. A roofing company, Smith Roofers. And an outside company, Subcontractor Inc.</p>
+<p>Subcontractor Inc and Paint Pro share a Yelp advertising account. They'd love to split it, but changing it mid-season would get the account shut down and kill Subcontractor Inc's marketing &mdash; so they wait. In the meantime, the Yelp bill hits Paint Pro's books, and the reimbursement comes back through Smith Roofers, because that's the company that invoices through Stripe.</p>
+<div class="pull">Operationally, this works fine. It's not a business problem &mdash; it's a <em>reporting</em> problem. And it was distorting the numbers by about <span class="num">$36,000</span> &mdash; on a <span class="num">$5,000,000</span> business, that's material.</div>
+
+<h2>The fix: a bucket</h2>
+<p>Accountants untangle this with <strong>due to/from accounts</strong>. Think of it as a bucket between your companies &mdash; a place where intercompany transfers live throughout the year. Money your companies owe each other goes in the bucket, <span class="hl">not in income or expenses.</span></p>
+<p>Here's the whole process:</p>
+<ol>
+<li><strong>Pull the Stripe exports.</strong> That's what Subcontractor Inc actually paid.</li>
+<li><strong>On Smith Roofers, back those payments out of income</strong> &mdash; and back out the Stripe fees too. The difference goes to the due to/from account.</li>
+<li><strong>Mirror it on the other company.</strong> Credit the due to/from account on one company, debit it on the other. On Paint Pro, the other side hits the Yelp marketing expense &mdash; bringing it down from about <span class="num">$36,000</span> to the roughly <span class="num">$3,000</span> Paint Pro actually spent on its own ads.</li>
+</ol>
+<p>That's it. The mirror rule keeps the two buckets in agreement, and each company reports a true P&amp;L and a true balance sheet.</p>
+<p>This is something I learned working as a staff accountant, and it comes up all the time with multi-business owners. If money moves between your companies &mdash; and it probably does &mdash; this is how you keep the numbers honest.</p>
+
+<div class="faq">
+<h2>Common questions</h2>
+<h3>Is a due to/from account an asset or a liability?</h3>
+<p>Both, depending on direction. &ldquo;Due from&rdquo; is a receivable &mdash; money another one of your companies owes this one &mdash; so it sits on the balance sheet as an asset. &ldquo;Due to&rdquo; is the mirror image, a payable, so it's a liability. Many owners use a single &ldquo;Due to/from&rdquo; account per related company that swings positive or negative.</p>
+<h3>Do transfers between my companies count as income?</h3>
+<p>No. When money moves between companies you own, it isn't revenue to the receiver and it isn't an expense to the sender &mdash; booking it that way overstates income on one set of books and overstates expenses on the other. It belongs in the due to/from account. How the balances are treated for tax depends on your entity structure, so loop in your CPA before year-end.</p>
+<h3>Do the balances have to match between the two companies?</h3>
+<p>Yes &mdash; that's the mirror rule. If Company A shows $10,000 due from Company B, then Company B's books should show $10,000 due to Company A. If the two sides don't agree, something was booked on one company and missed on the other, and that difference is exactly where the distortion hides.</p>
+<h3>I own both companies &mdash; can't I just ignore it?</h3>
+<p>You can, but then neither P&amp;L is telling you the truth: one company looks more profitable than it is and the other looks worse. That distorts every decision you make from the numbers &mdash; pricing, hiring, which company gets investment &mdash; and it surfaces fast in a lender review, a partner buy-in, or a sale. The fix costs a few journal entries a year.</p>
 </div>
+
+<div class="cta">
+<div class="lbl">Get the numbers honest</div>
+<h2>Money moving between your companies? Let's untangle it.</h2>
+<p>I set up the due to/from accounts, unwind the mis-bookings, and hand back financials where every company tells the truth &mdash; the same fix from this note. Free 30 minutes, no pitch, and I'll tell you straight whether it's worth doing.</p>
+<div class="row">
+<a class="ctabtn" href="https://calendly.com/kyle-doctordigits/new-meeting" target="_blank" rel="noopener">Book a free 30-min call &rarr;</a>
+<a class="ctabtn dark" href="../services.html">See what we take on &rarr;</a>
+</div>
+</div>
+
+<p class="fine">Client example anonymized &mdash; names changed, figures approximate. Nothing here is legal or tax advice &mdash; engagements are subject to a written agreement.</p>
+</article></div>
 
 <!-- DRD NEWSLETTER BAND -->
 <style>
@@ -147,7 +180,7 @@
   function utm(){ var p=new URLSearchParams(location.search); var o={}; ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if(p.get(k)) o[k]=p.get(k); }); if(!o.utm_campaign) o.utm_campaign='notes'; return o; }
   var v = vid();
   try{
-    var d = Object.assign({ type:'visit', visitorId: v, returning: ret, page: 'notes/index',
+    var d = Object.assign({ type:'visit', visitorId: v, returning: ret, page: 'notes/due-to-from-accounts',
       referrer: document.referrer||'', screen: screen.width+'x'+screen.height,
       viewport: innerWidth+'x'+innerHeight, language: navigator.language||'',
       timezone: (Intl.DateTimeFormat().resolvedOptions()||{}).timeZone||'', userAgent: navigator.userAgent }, utm());
