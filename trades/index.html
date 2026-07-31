@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Digits — Numbers for the Trades</title>
+<meta name="description" content="Accounting for service businesses — pricing, scheduling, capacity. The numbers that take a trades company from six figures to seven to eight.">
+<link rel="canonical" href="https://drdigits.com/trades/">
+<!-- PRE-LAUNCH: remove the noindex line below (and add /trades/ to sitemap.xml) when Episode 1 ships -->
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#F2F1EC;color:#1A1A1A;font-family:'Newsreader',serif}
+a{color:#1B5E20}a:hover{color:#1A1A1A}
+input::placeholder{color:#999}
+.mono{font-family:'IBM Plex Mono',monospace}
+.page{min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;justify-content:space-between;align-items:baseline;padding:28px 48px;border-bottom:3px solid #1A1A1A}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:960px;margin:0 auto;padding:80px 48px;box-sizing:border-box}
+h1{font-size:clamp(40px,6vw,72px);font-weight:600;line-height:1.08;letter-spacing:-.01em;margin:24px 0 0;text-wrap:pretty}
+.hl{background:#7EF98F;padding:0 12px}
+.pitch{font-size:clamp(20px,2.4vw,26px);line-height:1.6;margin:32px 0 0;max-width:640px;text-wrap:pretty}
+.offer{margin-top:56px;border:3px solid #1A1A1A;background:#FDFDFB;max-width:720px}
+.offer-tag{background:#1A1A1A;color:#F2F1EC;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.12em;padding:10px 24px}
+.offer-body{padding:28px 32px 32px}
+.offer-title{font-size:28px;font-weight:600;line-height:1.3}
+.offer-copy{font-size:19px;line-height:1.6;margin-top:10px;text-wrap:pretty}
+form{margin-top:24px;display:flex}
+input[type=email]{flex:1;font-family:'IBM Plex Mono',monospace;font-size:17px;padding:16px 18px;border:3px solid #1A1A1A;border-right:none;background:#F2F1EC;outline:none;min-width:0}
+button{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:600;padding:16px 28px;border:3px solid #1A1A1A;background:#7EF98F;cursor:pointer;white-space:nowrap;color:#1A1A1A}
+button:hover{background:#1A1A1A;color:#7EF98F}
+.fine{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#666;margin-top:12px}
+.success{display:none;margin-top:24px;border:3px solid #1A1A1A;background:rgba(126,249,143,.25);padding:20px 24px}
+.eps{border-top:3px solid #1A1A1A;padding:40px 48px;display:flex;gap:48px;max-width:960px;margin:0 auto;box-sizing:border-box;width:100%}
+.eps>div{flex:1}
+footer{border-top:3px solid #1A1A1A;padding:20px 48px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#666;letter-spacing:.1em}
+@media (max-width:640px){header,footer{padding-left:24px;padding-right:24px}main{padding:56px 24px}.eps{flex-direction:column;gap:32px;padding:40px 24px}form{flex-direction:column}input[type=email]{border-right:3px solid #1A1A1A;border-bottom:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div class="mono" style="font-size:18px;font-weight:600;letter-spacing:.12em">DR. DIGITS</div>
+  <div class="mono" style="font-size:13px;letter-spacing:.12em;color:#666">NUMBERS FOR THE TRADES</div>
+</header>
+<main>
+  <div class="mono" style="font-size:14px;letter-spacing:.14em;color:#666">FROM THE SERIES · 6 → 7 → 8 FIGURES</div>
+  <h1>Your jobs are profitable.<br>That doesn't mean <span class="hl">you</span> are.</h1>
+  <p class="pitch">I'm an accountant for service businesses — electricians, plumbers, HVAC. I do the work between the chairs: pricing, scheduling, capacity, the numbers that take a trades company from six figures to seven to eight.</p>
+  <div class="offer">
+    <div class="offer-tag">FREE — THE SPREADSHEET FROM THE VIDEO</div>
+    <div class="offer-body">
+      <div class="offer-title">The Hours Machine workbook</div>
+      <div class="offer-copy">The exact Excel file from Episode 1 — drop in your own crew, rate, and weekly nut, and it tells you your break-even hours, your real utilization, and what your rate <em>should</em> be. Ten minutes to fill in.</div>
+      <!-- Wired to the Dr. Digits Apps Script backend: type:'lead', product:'trades'
+           → row in the Leads sheet + auto-email with the Hours Machine workbook link. -->
+      <form id="capture" action="#" method="post">
+        <input type="text" name="company_fax" value="" style="position:absolute;left:-9999px;height:0;overflow:hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="email" name="email" required placeholder="you@yourcompany.com" aria-label="Email address" autocomplete="email">
+        <button type="submit">Send me the workbook →</button>
+      </form>
+      <div class="fine" id="fine">Plus one email per episode. No spam, no course funnel. Unsubscribe anytime.</div>
+      <div class="success" id="success">
+        <div class="mono" style="font-size:16px;font-weight:600">✓ Check your inbox.</div>
+        <div style="font-size:19px;margin-top:6px">The workbook is on its way. New episodes land the same place.</div>
+      </div>
+    </div>
+  </div>
+</main>
+<section class="eps">
+  <div>
+    <div class="mono" style="font-size:13px;letter-spacing:.12em;color:#666">EP 01 — COMING SOON</div>
+    <div style="font-size:24px;font-weight:600;margin-top:8px">The Hours Machine</div>
+    <div style="font-size:18px;color:#666;margin-top:6px;line-height:1.5">He hired a $100K electrician. His profit went to $0. <span class="mono" style="font-size:15px">Dropping in the next week or two.</span></div>
+  </div>
+  <div>
+    <div class="mono" style="font-size:13px;letter-spacing:.12em;color:#666">NEXT — EP 02</div>
+    <div style="font-size:24px;font-weight:600;margin-top:8px">The Data You're Not Collecting</div>
+    <div style="font-size:18px;color:#666;margin-top:6px;line-height:1.5">Subscribe above and it lands in your inbox.</div>
+  </div>
+</section>
+<footer>
+  <div>DR. DIGITS · DRDIGITS.COM</div>
+  <div>© 2026</div>
+</footer>
+</div>
+<script>
+(function(){
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyu_Qr8zyI25IgiMPWnnezy4kVlE1VzgEoW_kC57l3Ocbg6ncuFiU-Y_4XZ84IFW71g/exec";
+  var ret = false;
+  function vid(){ try{ var v=localStorage.getItem('drd_vid'); if(v){ ret=true; } else { v='v'+Math.random().toString(36).slice(2)+Date.now().toString(36); localStorage.setItem('drd_vid',v);} return v; }catch(e){ return 'v-nostorage'; } }
+  function utm(){ var p=new URLSearchParams(location.search); var o={}; ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if(p.get(k)) o[k]=p.get(k); }); if(!o.utm_campaign) o.utm_campaign='trades'; return o; }
+  var v = vid();
+  window.__drd = { vid: v, utm: utm() };
+  try{
+    var d = Object.assign({ type:'visit', visitorId: v, returning: ret, page: '/trades/',
+      referrer: document.referrer||'', screen: screen.width+'x'+screen.height,
+      viewport: innerWidth+'x'+innerHeight, language: navigator.language||'',
+      timezone: (Intl.DateTimeFormat().resolvedOptions()||{}).timeZone||'', userAgent: navigator.userAgent }, utm());
+    var body = JSON.stringify(d);
+    if(navigator.sendBeacon){ navigator.sendBeacon(APPS_SCRIPT_URL, new Blob([body], {type:'text/plain'})); }
+    else{ fetch(APPS_SCRIPT_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body}); }
+  }catch(e){}
+
+  var form = document.getElementById('capture');
+  var loadedAt = Date.now();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var em = form.querySelector('input[name="email"]');
+    var email = (em.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ em.style.borderColor='#d0453c'; em.focus(); return; }
+    var hp = (form.querySelector('input[name="company_fax"]')||{}).value||'';
+    if(!hp && (Date.now()-loadedAt) >= 2000){
+      var d = Object.assign({ type:'lead', product:'trades', email:email, page:'/trades/',
+        visitorId:(window.__drd||{}).vid||'', referrer:document.referrer||'',
+        timezone:(Intl.DateTimeFormat().resolvedOptions()||{}).timeZone||'', userAgent:navigator.userAgent }, (window.__drd||{}).utm||{});
+      try{ fetch(APPS_SCRIPT_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: JSON.stringify(d)}); }catch(err){}
+    }
+    form.style.display = 'none';
+    document.getElementById('fine').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  });
+})();
+</script>
+</body>
+</html>
