@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The $600 CFO — free cash forecast model | DrDigits</title>
-<meta name="description" content="A startup won a $1.8M government contract with $5,775 in the bank. This is the working cash model behind the engagement — free, anonymized." />
-<meta property="og:title" content="The $600 CFO — the whole finance department in one spreadsheet" />
+<title>The $600 CFO — cash flow forecasting for small businesses | DrDigits</title>
+<meta name="description" content="Cash flow forecasting for small businesses. A real engagement: $1.8M contract won, $5,775 in the bank, a $600/month finance department. Get the working model free." />
+<meta property="og:title" content="The $600 CFO — cash flow forecasting for small businesses" />
 <meta property="og:description" content="Debt cleared by April. Cash builds to $260K. The 18-month model behind it — free, anonymized." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,8 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--cream);color:var(--ink);font-family:'IBM Plex Sans',-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
   .wrap{min-height:100vh;display:flex;justify-content:center;padding:32px 16px 48px}
-  .card{width:760px;max-width:100%;background:#fff;border:1px solid var(--line);box-shadow:var(--line) 0 1px 0, rgba(0,0,0,.35) 0 24px 60px -40px}
-  .pad{padding:56px 64px 44px}
+  .card{width:720px;max-width:100%}
+  .pad{padding:40px 8px 44px}
   .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:var(--mut);text-transform:uppercase;text-align:center;margin-bottom:30px}
   .eyebrow a{color:inherit;text-decoration:none}
   h1{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:clamp(36px,9vw,58px);line-height:1.02;letter-spacing:-.02em;margin:0 auto 20px;max-width:15ch;text-align:center}
@@ -29,7 +29,7 @@
   .lead{font-size:16px;line-height:1.6;color:#2a2a2a;margin:0 auto 30px;max-width:46ch;text-align:center}
   .cta{display:flex;flex-direction:column;align-items:center;gap:14px}
   #leadForm{display:flex;align-items:stretch;width:100%;max-width:420px}
-  #email{flex:1;min-width:0;border:1.5px solid var(--ink);border-right:none;outline:none;background:transparent;font-family:'IBM Plex Sans',sans-serif;font-size:16px;padding:14px 14px;color:var(--ink)}
+  #email{flex:1;min-width:0;border:1.5px solid var(--ink);border-right:none;outline:none;background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:16px;padding:14px 14px;color:var(--ink)}
   #submitBtn{border:none;background:var(--ink);color:#fff;font-size:15px;font-weight:600;padding:14px 20px;cursor:pointer;border-radius:2px;transition:.15s;font-family:'IBM Plex Sans',sans-serif;white-space:nowrap}
   #submitBtn:hover{opacity:.85}
   #submitBtn:active{transform:translateY(1px)}
@@ -43,7 +43,7 @@
   .stat .l{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--mut);margin-top:6px;text-transform:uppercase;line-height:1.4}
   .seclabel{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin:44px 0 6px;text-align:left}
   .secsub{font-size:14px;color:var(--sec);margin:0 0 16px;text-align:left;line-height:1.5}
-  .chartbox{background:var(--cream);border:1px solid var(--line);padding:14px 10px 8px}
+  .chartbox{background:#fff;border:1px solid var(--line);padding:14px 10px 8px}
   .chartbox svg{display:block;width:100%;height:auto}
   .legend{display:flex;gap:18px;justify-content:center;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sec)}
   .legend span{display:inline-flex;align-items:center;gap:6px}
@@ -54,7 +54,7 @@
   .row{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
   .row .k{flex:0 0 168px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
   .row .d{font-size:14px;color:#3a3a3a;line-height:1.5}
-  .offer{margin-top:44px;border:1.5px solid var(--ink);padding:22px 24px;background:var(--cream)}
+  .offer{margin-top:44px;border:1.5px solid var(--ink);padding:22px 24px;background:#fff}
   .offer p{margin:0 0 12px;font-size:15px;line-height:1.6;color:#2a2a2a}
   .offer a{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-bottom:1.5px solid var(--ink);text-decoration:none;padding:4px 2px}
   .offer a:hover{opacity:.7}
@@ -63,7 +63,7 @@
   #thanks .ok{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--ink);text-align:center}
   #modelBtn{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-bottom:1.5px solid var(--ink);text-decoration:none;padding:4px 2px}
   @media (max-width:560px){
-    .pad{padding:40px 20px 36px}
+    .pad{padding:28px 6px 32px}
     #leadForm{flex-direction:column;gap:10px}
     #email{border:1.5px solid var(--ink);text-align:center;padding:13px 12px}
     #submitBtn{padding:15px 20px}
@@ -80,13 +80,13 @@
   <div class="card">
     <div class="pad">
 
-      <div class="eyebrow"><a href="https://drdigits.com/">DrDigits</a> · The $600 CFO</div>
+      <div class="eyebrow"><a href="https://drdigits.com/">DrDigits</a></div>
 
-      <h1>One spreadsheet, running <span class="hl">the whole company</span></h1>
+      <h1>The <span class="hl">$600 CFO</span></h1>
 
-      <p class="sub">He won a $1.8M government contract with $5,775 in the bank.</p>
+      <p class="sub">Cash-flow forecasting for small businesses.</p>
 
-      <p class="lead">I run the company's finances for $600 a month — an 18-month rolling cash forecast, rebuilt every two weeks as the business changes. This is the working model, anonymized.</p>
+      <p class="lead">A client won a $1.8M government contract with $5,775 in the bank. I run his cash for $600 a month — an 18-month forecast, rebuilt every two weeks. This is the working model, free and anonymized.</p>
 
       <div class="cta">
         <form id="leadForm">
