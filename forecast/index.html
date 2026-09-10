@@ -4,70 +4,162 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The $600 CFO — free cash forecast model | DrDigits</title>
-<meta name="description" content="A startup won a $1.8M government contract with $5,774.77 in the bank. This is the actual spreadsheet running its cash — updated every couple weeks, free, anonymized." />
+<meta name="description" content="A startup won a $1.8M government contract with $5,775 in the bank. This is the working cash model behind the engagement — free, anonymized." />
 <meta property="og:title" content="The $600 CFO — the whole finance department in one spreadsheet" />
-<meta property="og:description" content="The questions change every month. The model keeps up. Free 18-month cash forecast from a real client engagement." />
+<meta property="og:description" content="Debt cleared by April. Cash builds to $260K. The 18-month model behind it — free, anonymized." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  body{margin:0}
-  .hov85:hover{opacity:.85}
-  .hov70:hover{opacity:.7}
+  :root{
+    --cream:#F2F1EC; --ink:#1A1A1A; --sec:#666666; --mut:#8a877f; --line:#e4e2dc;
+    --mint:#7EF98F; --green:#1B5E20; --greige:#CFCDC4;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'IBM Plex Sans',-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{min-height:100vh;display:flex;justify-content:center;padding:32px 16px 48px}
+  .card{width:760px;max-width:100%;background:#fff;border:1px solid var(--line);box-shadow:var(--line) 0 1px 0, rgba(0,0,0,.35) 0 24px 60px -40px}
+  .pad{padding:56px 64px 44px}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:var(--mut);text-transform:uppercase;text-align:center;margin-bottom:30px}
+  .eyebrow a{color:inherit;text-decoration:none}
+  h1{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:clamp(36px,9vw,58px);line-height:1.02;letter-spacing:-.02em;margin:0 auto 20px;max-width:15ch;text-align:center}
+  .hl{background-image:linear-gradient(transparent 58%, var(--mint) 58%);padding:0 .04em}
+  .sub{font-family:Newsreader,serif;font-style:italic;font-size:clamp(18px,4.6vw,22px);color:#4a4a4a;margin:0 auto 18px;max-width:34ch;line-height:1.35;text-align:center}
+  .lead{font-size:16px;line-height:1.6;color:#2a2a2a;margin:0 auto 30px;max-width:46ch;text-align:center}
+  .cta{display:flex;flex-direction:column;align-items:center;gap:14px}
+  #leadForm{display:flex;align-items:stretch;width:100%;max-width:420px}
+  #email{flex:1;min-width:0;border:1.5px solid var(--ink);border-right:none;outline:none;background:transparent;font-family:'IBM Plex Sans',sans-serif;font-size:16px;padding:14px 14px;color:var(--ink)}
+  #submitBtn{border:none;background:var(--ink);color:#fff;font-size:15px;font-weight:600;padding:14px 20px;cursor:pointer;border-radius:2px;transition:.15s;font-family:'IBM Plex Sans',sans-serif;white-space:nowrap}
+  #submitBtn:hover{opacity:.85}
   #submitBtn:active{transform:translateY(1px)}
-  @media (max-width:720px){
-    h1.hero{font-size:42px !important}
-    .cardpad{padding:44px 24px 40px !important}
-    p.hook{font-size:20px !important}
-    #leadForm{flex-direction:column !important}
-    #email{width:100% !important;text-align:center}
+  .fine{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--mut);text-align:center}
+  .ylink{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-bottom:1.5px solid var(--mint);text-decoration:none;padding:4px 2px}
+  .ylink:hover{opacity:.7}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+  .stat{padding:20px 8px;text-align:center}
+  .stat+.stat{border-left:1px solid var(--line)}
+  .stat .v{font-family:Newsreader,serif;font-size:clamp(24px,6.4vw,34px);font-weight:500}
+  .stat .l{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--mut);margin-top:6px;text-transform:uppercase;line-height:1.4}
+  .seclabel{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin:44px 0 6px;text-align:left}
+  .secsub{font-size:14px;color:var(--sec);margin:0 0 16px;text-align:left;line-height:1.5}
+  .chartbox{background:var(--cream);border:1px solid var(--line);padding:14px 10px 8px}
+  .chartbox svg{display:block;width:100%;height:auto}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sec)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:14px;height:0}
+  .sw.cash{border-top:3px solid var(--ink)}
+  .sw.debt{border-top:2px dashed var(--sec)}
+  .inside{margin-top:8px;border-top:1px solid var(--ink)}
+  .row{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .row .k{flex:0 0 168px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .row .d{font-size:14px;color:#3a3a3a;line-height:1.5}
+  .offer{margin-top:44px;border:1.5px solid var(--ink);padding:22px 24px;background:var(--cream)}
+  .offer p{margin:0 0 12px;font-size:15px;line-height:1.6;color:#2a2a2a}
+  .offer a{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-bottom:1.5px solid var(--ink);text-decoration:none;padding:4px 2px}
+  .offer a:hover{opacity:.7}
+  .foot{margin:22px 0 0;font-family:'IBM Plex Mono',monospace;font-size:10px;line-height:1.6;color:#9a9791}
+  #thanks{display:none;flex-direction:column;align-items:center;gap:10px}
+  #thanks .ok{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--ink);text-align:center}
+  #modelBtn{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-bottom:1.5px solid var(--ink);text-decoration:none;padding:4px 2px}
+  @media (max-width:560px){
+    .pad{padding:40px 20px 36px}
+    #leadForm{flex-direction:column;gap:10px}
+    #email{border:1.5px solid var(--ink);text-align:center;padding:13px 12px}
+    #submitBtn{padding:15px 20px}
+    .row{flex-direction:column;gap:4px}
+    .row .k{flex:none}
+    .stat{padding:16px 4px}
   }
 </style>
 <link rel="canonical" href="https://drdigits.com/forecast/">
 </head>
 <body>
 
-<div style="min-height:100vh;background:rgb(242,241,236);font-family:'IBM Plex Sans',-apple-system,sans-serif;color:rgb(10,10,10);display:flex;align-items:center;justify-content:center;padding:48px 20px;">
-  <div style="width:900px;max-width:100%;background:rgb(255,255,255);border:1px solid rgb(228,226,220);box-shadow:rgb(228,226,220) 0px 1px 0px, rgba(0,0,0,0.35) 0px 24px 60px -40px;">
-    <div class="cardpad" style="padding:60px 80px 52px;text-align:center;">
+<div class="wrap">
+  <div class="card">
+    <div class="pad">
 
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.26em;color:rgb(138,135,127);text-transform:uppercase;margin-bottom:34px;"><a href="https://drdigits.com/" style="text-decoration:none;color:inherit;">DrDigits</a> · The $600 CFO</div>
+      <div class="eyebrow"><a href="https://drdigits.com/">DrDigits</a> · The $600 CFO</div>
 
-      <h1 class="hero" style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0 auto 26px;max-width:16ch;">One spreadsheet, running <span style="background-image:linear-gradient(transparent 56%, rgb(126,249,143) 56%);padding:0 0.04em;">the whole company</span></h1>
+      <h1>One spreadsheet, running <span class="hl">the whole company</span></h1>
 
-      <p class="hook" style="font-family:Newsreader,serif;font-style:italic;font-size:24px;color:rgb(74,74,74);margin:0 auto 40px;max-width:36ch;line-height:1.35;">He won a $1.8M government contract with $5,774.77 in the bank. And seventy-seven cents.</p>
+      <p class="sub">He won a $1.8M government contract with $5,775 in the bank.</p>
 
-      <p style="font-size:17px;line-height:1.6;color:rgb(42,42,42);margin:0 auto 40px;max-width:56ch;text-align:left;">I'm the entire finance department for a defense startup — for $600 a month. Right now the founder asks two questions: when is everyone paid back, and when do I finally pay <em>myself</em>? But those are just <em>this month's</em> questions. Business keeps happening — a raise moves up, a cost shows up that didn't exist in August, the answers move. So every couple of weeks we close the books, update one tab of assumptions, and ask again. The questions change. The model keeps up. This is that model — real engagement, names changed, nothing else. Put your numbers in and ask it <em>your</em> questions.</p>
+      <p class="lead">I run the company's finances for $600 a month — an 18-month rolling cash forecast, rebuilt every two weeks as the business changes. This is the working model, anonymized.</p>
 
-      <div style="display:flex;flex-direction:column;align-items:center;gap:18px;">
-        <form id="leadForm" style="display:flex;align-items:stretch;gap:0;">
+      <div class="cta">
+        <form id="leadForm">
           <input type="text" id="company_fax" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0;border:none">
-          <input id="email" type="email" name="email" placeholder="you@company.com" style="width:230px;border:1.5px solid rgb(10,10,10);border-right:none;outline:none;background:transparent;font-family:'IBM Plex Sans',sans-serif;font-size:15px;padding:14px 14px;color:rgb(10,10,10);">
-          <button id="submitBtn" type="submit" class="hov85" style="border:none;background:rgb(10,10,10);color:rgb(255,255,255);font-size:16px;font-weight:600;padding:14px 26px;cursor:pointer;border-radius:2px;transition:.15s;font-family:'IBM Plex Sans',sans-serif;">Get the free model →</button>
+          <input id="email" type="email" name="email" placeholder="you@company.com" aria-label="Your email">
+          <button id="submitBtn" type="submit">Get the free model →</button>
         </form>
-        <div id="thanks" style="display:none;flex-direction:column;align-items:center;gap:10px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:rgb(10,10,10);">✅ YOU'RE IN — THE MODEL IS ON ITS WAY TO YOUR INBOX</div>
-          <a id="modelBtn" href="#" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgb(10,10,10);border-bottom:1.5px solid rgb(10,10,10);text-decoration:none;padding:4px 2px;">Open the model →</a>
+        <div id="thanks">
+          <div class="ok">✅ YOU'RE IN — THE MODEL IS ON ITS WAY</div>
+          <a id="modelBtn" href="#" target="_blank" rel="noopener">Open the model →</a>
         </div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;color:rgb(138,135,127);">Free · no card · the real model from the series, anonymized</div>
-        <a href="https://www.youtube.com/@DoctorDigits" target="_blank" rel="noopener" class="hov70" style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgb(10,10,10);border-bottom:1.5px solid rgb(126,249,143);text-decoration:none;padding:4px 2px;">Watch the series on YouTube →</a>
+        <div class="fine">Free · no card · the real model, anonymized</div>
+        <a class="ylink" href="https://www.youtube.com/@DoctorDigits" target="_blank" rel="noopener">Watch the series →</a>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid rgb(10,10,10);border-bottom:1px solid rgb(228,226,220);">
-        <div style="padding:22px 12px;border-right:1px solid rgb(228,226,220);"><div style="font-family:Newsreader,serif;font-size:34px;font-weight:500;"><span style="background-image:linear-gradient(transparent 60%, rgb(126,249,143) 60%);">$1.8M</span></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:rgb(138,135,127);margin-top:6px;text-transform:uppercase;line-height:1.4;">the contract he won</div></div>
-        <div style="padding:22px 12px;border-right:1px solid rgb(228,226,220);"><div style="font-family:Newsreader,serif;font-size:34px;font-weight:500;">$5,774.77</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:rgb(138,135,127);margin-top:6px;text-transform:uppercase;line-height:1.4;">the bank account that day</div></div>
-        <div style="padding:22px 12px;"><div style="font-family:Newsreader,serif;font-size:34px;font-weight:500;"><span style="background-image:linear-gradient(transparent 60%, rgb(126,249,143) 60%);">$600/mo</span></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:rgb(138,135,127);margin-top:6px;text-transform:uppercase;line-height:1.4;">his entire finance dept</div></div>
+      <div class="stats">
+        <div class="stat"><div class="v"><span class="hl">$1.8M</span></div><div class="l">contract won</div></div>
+        <div class="stat"><div class="v">$5,775</div><div class="l">cash that day</div></div>
+        <div class="stat"><div class="v"><span class="hl">$600/mo</span></div><div class="l">finance dept</div></div>
       </div>
 
-      <p style="font-size:15px;line-height:1.65;color:rgb(42,42,42);margin:36px auto 0;max-width:56ch;text-align:left;"><strong style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;">What lands in your inbox:</strong><br>an 18-month rolling cash model built to be <em>updated</em>, not admired. One assumptions tab you type on — everything else is formulas. It handles who gets paid back in what order, a minimum-cash floor so you never plan to land on zero, switches for costs that might not happen, and a tracking tab that scores last month's forecast against what actually hit the bank. New expense shows up? It's one new row, and every answer downstream moves with it.</p>
+      <div class="seclabel">The 18-month plan, in one chart</div>
+      <p class="secsub">Every dollar above a $15K floor repays creditors first. Debt clears in April. Then cash compounds.</p>
 
-      <div style="margin:36px auto 0;max-width:56ch;border:1.5px solid rgb(10,10,10);padding:22px 24px;text-align:left;background:rgb(242,241,236);">
-        <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:rgb(42,42,42);"><strong>Don't want to run it yourself?</strong> That's the actual job. I close the books, update the assumptions, rerun the forecast, and send a short note on what changed — every cycle, as the questions change. $600 a month, all-in.</p>
-        <a href="https://calendly.com/kyle-doctordigits/new-meeting" target="_blank" rel="noopener" class="hov70" style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgb(10,10,10);border-bottom:1.5px solid rgb(10,10,10);text-decoration:none;padding:4px 2px;">Book a free 30-min call →</a>
+      <div class="chartbox">
+        <svg viewBox="0 0 640 300" role="img" aria-label="Line chart: creditor balance falls from $201K to zero by April 2027 while cash holds a $15K floor, then cash climbs to $260K by February 2028">
+          <!-- gridlines -->
+          <line x1="44" y1="266" x2="630" y2="266" stroke="#1A1A1A" stroke-width="1"/>
+          <line x1="44" y1="177.1" x2="630" y2="177.1" stroke="#dcdad3" stroke-width="1"/>
+          <line x1="44" y1="88.2" x2="630" y2="88.2" stroke="#dcdad3" stroke-width="1"/>
+          <text x="38" y="269.5" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="#8a877f">0</text>
+          <text x="38" y="180.6" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="#8a877f">100K</text>
+          <text x="38" y="91.7" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="#8a877f">200K</text>
+          <!-- cash area (mint) -->
+          <path d="M44.0,252.7 L78.5,252.7 L112.9,252.7 L147.4,252.7 L181.9,252.7 L216.4,252.7 L250.8,252.7 L285.3,242.4 L319.8,212.0 L354.2,211.1 L388.7,180.7 L423.2,150.3 L457.6,149.4 L492.1,119.0 L526.6,88.5 L561.1,93.1 L595.5,63.9 L630.0,34.8 L630.0,266.0 L44.0,266.0 Z" fill="#7EF98F" fill-opacity="0.55"/>
+          <!-- debt line (dashed) -->
+          <polyline points="44.0,87.6 78.5,120.6 112.9,155.6 147.4,155.7 181.9,190.1 216.4,226.9 250.8,236.8 285.3,266.0" fill="none" stroke="#666666" stroke-width="2" stroke-dasharray="5 4"/>
+          <!-- cash line (ink) -->
+          <polyline points="44.0,252.7 78.5,252.7 112.9,252.7 147.4,252.7 181.9,252.7 216.4,252.7 250.8,252.7 285.3,242.4 319.8,212.0 354.2,211.1 388.7,180.7 423.2,150.3 457.6,149.4 492.1,119.0 526.6,88.5 561.1,93.1 595.5,63.9 630.0,34.8" fill="none" stroke="#1A1A1A" stroke-width="2.5"/>
+          <!-- debt-free marker -->
+          <line x1="285.3" y1="40" x2="285.3" y2="266" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="3 3"/>
+          <rect x="230" y="22" width="112" height="18" fill="#1A1A1A"/>
+          <text x="286" y="34.5" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" letter-spacing="1" fill="#F2F1EC">DEBT-FREE</text>
+          <!-- series labels -->
+          <text x="52" y="76" font-family="IBM Plex Mono,monospace" font-size="12" fill="#666666">OWED · $201K</text>
+          <text x="150" y="243" font-family="IBM Plex Mono,monospace" font-size="12" fill="#666666">$15K FLOOR</text>
+          <circle cx="630" cy="34.8" r="4" fill="#7EF98F" stroke="#1A1A1A" stroke-width="1.5"/>
+          <text x="626" y="20" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="500" fill="#1B5E20">CASH · $260K</text>
+          <!-- x labels -->
+          <text x="44" y="284" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="#8a877f">SEP '26</text>
+          <text x="285.3" y="284" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="#8a877f">APR '27</text>
+          <text x="630" y="284" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="#8a877f">FEB '28</text>
+        </svg>
+      </div>
+      <div class="legend">
+        <span><span class="sw cash"></span>Cash on hand</span>
+        <span><span class="sw debt"></span>Owed to creditors</span>
       </div>
 
-      <p style="margin:22px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:rgb(154,151,143);">1 · Real, anonymized client engagement. Numbers are as of the books on 8/20/26 — not a guarantee of anyone's results. Not financial, legal, or tax advice.</p>
+      <div class="seclabel" style="margin-top:48px">What lands in your inbox</div>
+      <div class="inside">
+        <div class="row"><div class="k">18-month forecast</div><div class="d">One assumptions tab you type on. Everything else is formulas.</div></div>
+        <div class="row"><div class="k">Creditor paydown</div><div class="d">Who gets repaid, in what order, and the month each clears.</div></div>
+        <div class="row"><div class="k">Minimum-cash floor</div><div class="d">A hard floor, so you never plan to land on zero.</div></div>
+        <div class="row"><div class="k">Forecast vs. actual</div><div class="d">Every month scored against what actually hit the bank.</div></div>
+      </div>
+
+      <div class="offer">
+        <p><strong>Prefer it run for you?</strong> I close the books, update the assumptions, rerun the forecast, and send a short note on what changed — every cycle. $600 a month, all-in.</p>
+        <a href="https://calendly.com/kyle-doctordigits/new-meeting" target="_blank" rel="noopener">Book a free 30-min call →</a>
+      </div>
+
+      <p class="foot">1 · Real, anonymized client engagement. Figures as of the August close — not a guarantee of anyone's results. Not financial, legal, or tax advice.</p>
     </div>
   </div>
 </div>
